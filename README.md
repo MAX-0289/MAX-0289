@@ -1,48 +1,145 @@
-# [Hugo Research Group Theme](https://github.com/wowchemy/starter-hugo-research-group)
+# Mediumish Theme
 
-[![Screenshot](./_DSC1902.JPG)](https://wowchemy.com/hugo-themes/)
+This theme for gohugo is a customized port based on the [Mediumish Jekyll-Theme](//github.com/wowthemesnet/mediumish-theme-jekyll) by [WowThemesNet](//github.com/wowthemesnet). The original theme ships with a few more features than this ported version but i also added features which the original version did not include.
 
-The **Research Group Template** empowers your research group to easily create a beautiful website with a stunning homepage, news, academic publications, events, team profiles, and a contact form.
+See the [Demo](https://lgaida.github.io/mediumish-gohugo-theme-demo) and [Demo-Source](https://github.com/lgaida/mediumish-gohugo-theme-demo)
 
-️**Trusted by 250,000+ researchers, educators, and students.** Highly customizable via the integrated **no-code, widget-based Wowchemy page builder**, making every site truly personalized ⭐⭐⭐⭐⭐
+![screenshot](https://raw.githubusercontent.com/lgaida/mediumish-gohugo-theme/master/images/screenshot.png)
 
-[![Get Started](https://img.shields.io/badge/-Get%20started-ff4655?style=for-the-badge)](https://wowchemy.com/hugo-themes/)
-[![Discord](https://img.shields.io/discord/722225264733716590?style=for-the-badge)](https://discord.com/channels/722225264733716590/742892432458252370/742895548159492138)  
-[![Twitter Follow](https://img.shields.io/twitter/follow/wowchemy?label=Follow%20on%20Twitter)](https://twitter.com/wowchemy)
+## Features
++ Landingpage
++ 404-Page
++ Posts
+    + tags can be used
+    + shareable via socialmedia
++ Custom pagination
++ Prev/Next-Links
++ Tag-Overview in Jumbotron
++ Integrations:
+    + Disqus Comments
+    + Google Analytics
+    + Mailchimp
 
-Easily write technical content with plain text Markdown, LaTeX math, diagrams, RMarkdown, or Jupyter, and import publications from BibTeX.
+## Installation
+Inside the folder of your Hugo site run:
 
-[Check out the latest demo](https://research-group.netlify.app/) of what you'll get in less than 60 seconds, or [view the showcase](https://wowchemy.com/creators/).
+    $ cd themes
+    $ git clone https://github.com/lgaida/mediumish-gohugo-theme
 
-The integrated [**Wowchemy**](https://wowchemy.com) website builder and CMS makes it easy to create a beautiful website for free. Edit your site in the CMS (or your favorite editor), generate it with [Hugo](https://github.com/gohugoio/hugo), and deploy with GitHub or Netlify. Customize anything on your site with widgets, light/dark themes, and language packs.
+## Preface
+I recommend placing image files for your site config within the `static` folder of your gohugo website. This allows them to be easily referenced from the config.toml or post.md files. You may structure the files and folders within `static` however you'd like, with one exception: There must be a file named `jumbotron.jpg` present under the path `static/images` as it is referenced in the .css.
 
-- 👉 [**Get Started**](https://wowchemy.com/hugo-themes/)
-- 📚 [View the **documentation**](https://wowchemy.com/docs/)
-- 💬 [Chat with the **Wowchemy research community**](https://discord.gg/z8wNYzb) or [**Hugo community**](https://discourse.gohugo.io)
-- ⬇️ **Automatically import citations from BibTeX** with the [Hugo Academic CLI](https://github.com/wowchemy/hugo-academic-cli)
-- 🐦 Share your new site with the community: [@wowchemy](https://twitter.com/wowchemy) [@GeorgeCushen](https://twitter.com/GeorgeCushen) [#MadeWithWowchemy](https://twitter.com/search?q=%23MadeWithWowchemy&src=typed_query)
-- 🗳 [Take the survey and help us improve #OpenSource](https://forms.gle/NioD9VhUg7PNmdCAA)
-- 🚀 [Contribute improvements](https://github.com/wowchemy/wowchemy-hugo-themes/blob/main/CONTRIBUTING.md) or [suggest improvements](https://github.com/wowchemy/wowchemy-hugo-themes/issues)
-- ⬆️ **Updating?** View the [Update Guide](https://wowchemy.com/docs/hugo-tutorials/update/) and [Release Notes](https://github.com/wowchemy/wowchemy-hugo-themes/releases)
 
-## We ask you, humbly, to support this open source movement
+## Post Example
+To create a simple post use the hugo new command as usual.
+This theme makes use of page bundles / page resource (see https://gohugo.io/content-management/page-bundles/).
+Place any image next to your post's index.md file and make sure it contains the keyword "cover" inside its name.
+This image will also be used for twitter and opengraph cards.
 
-Today we ask you to defend the open source independence of the Wowchemy website builder and themes 🐧
+```
+hugo new blog/my-first-post/index.md
+```
 
-We're an open source movement that depends on your support to stay online and thriving, but 99.9% of our creators don't give; they simply look the other way.
+Creating a new post will create something like this:
+```
+---
+title: "My first post"
+date: 2018-10-01T15:25:19+02:00
+publishdate: 2018-10-07T11:17:14+02:00
+lastmod: 2018-10-08T18:55:29+02:00
+tags: ["post", "interesting"]
+type: "post"
+comments: false
+---
+# Lorem ipsum
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean semper libero quis dictum dapibus. Nulla egestas vitae augue eu rutrum. Duis ullamcorper dictum ipsum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse tortor dui, fermentum non dapibus id, volutpat non odio.
+```
 
-### [❤️ Click here to become a GitHub Sponsor, unlocking awesome perks such as _exclusive academic templates and widgets_](https://github.com/sponsors/gcushen)
+`publishdate`: is displayed at the top of the single-view\
+`lastmod`: is displayed as a hint on the single-view\
+`tags`: are used as usual, just add the tags you want to use. They are displayed in the jumbotron on the list-view, and on the bottom of each single-view\
+`comments`: true/false to turn on/off disqus-comments
 
-## Demo credits
 
-Please replace the demo images with your own.
+## Static Content
+I added a customized layout for content of type "static", which means that posts in the folder "static" are displayed as standalone pages. I also disabled the list-layout for this folder.
 
-- [Female scientist](https://unsplash.com/photos/uVnRa6mOLOM)
-- [2 Coders](https://unsplash.com/photos/kwzWjTnDPLk)
-- [Cafe](https://unsplash.com/photos/RnDGGnMEOao)
-- Blog posts
-  - https://unsplash.com/photos/AndE50aaHn4
-  - https://unsplash.com/photos/OYzbqk2y26c
-- Avatars
-  - https://unsplash.com/photos/5yENNRbbat4
-  - https://unsplash.com/photos/WNoLnJo7tS8
+For example: to create an imprint, simply go with the following command and add your markdown-text.
+```
+hugo new static/imprint.md
+```
+
+## Configuration
+You should at least specify the following default params in your config.toml
+```toml
+baseURL = "http://yourdomain.com"
+languageCode = "en-us"
+title = "Mediumish"
+theme = "mediumish-gohugo-theme"
+summaryLength = 25
+copyright = "John Doe - All rights reserved"
+disqusShortname = "shortDisquis"
+googleAnalytics = "UA-1XXXXXXX1-X"
+```
+`title`: is displayed on the postlist and on each post as the title\
+`summaryLength`: feel free to play around with this\
+`copyright`: is displayed in the footer next to the copyright-logo\
+`disqusShortname`: provide your disqusShortname\
+`googleAnalytics`: provide your googleAnalytics-Code
+
+### General Params
+```toml
+[params]
+  logo = "/images/icon.png"
+  description = "the clean blog!"
+  mailchimp = "you can provide a mailchimp-link here, see below"
+  mailprotect = "you can provide a protector-name here, see below"
+  customCSS = ["css/tweaks.css", "css/customHeader.css"]
+```
+`logo`: is displayed in titlebar and alertbar\
+`description`: is displayed under title\
+`mailchimp` and `mailprotect`: provide links to a mailchimp-list and a mailchimp-protector id, the following screenshot should clarify. if not specified the alertbar for mail-subscription doesn't show up.
+`customCSS`: you can add paths to your own css files here to tweak and customize the css
+
+![mailchimp-example](https://raw.githubusercontent.com/lgaida/mediumish-gohugo-theme/master/images/mailchimp.png)
+
+### Author Params
+```toml
+[params.author]
+  name = "John Doe"
+  thumbnail = "/images/author.jpg"
+  description = "Creator of this blog."
+```
+![author-params](https://raw.githubusercontent.com/lgaida/mediumish-gohugo-theme/master/images/authorpost.png)
+
+### Landingpage Params
+```toml
+[params.index]
+  picture = "/images/author.jpg"
+  title = "John Doe"
+  subtitle = "I'm a unique placeholder. Working here and there!"
+  mdtext = '''Currently trying to get this blog running, still don't know what the blog will be about!\
+**This textblock is a demonstration of the mdtext-param.**\
+### This is a markdown heading'''
+  alertbar = true
+```
+You can currently provide your username from `github`, `linkedin`, `xing`, `twitter`, `medium`. They will be displayed as icons on the landingpage.
+```toml
+[params.social]
+  github = "<username>"
+  linkedin = "<username>"
+  xing = "<username>"
+  medium = "<username>"
+  twitter = "<username>"
+  instagram = "<username>"
+```
+![landingpage-params](https://raw.githubusercontent.com/lgaida/mediumish-gohugo-theme/master/images/landing.png)
+
+## Contributing
+
+Feel free to use the [issue tracker](//github.com/lgaida/mediumish-gohugo-theme/issues) if you want to contribute in any possible way.
+You can also create a [pull request](//github.com/lgaida/mediumish-gohugo-theme/pulls) if you have already implemented a new feature that you want to share.
+
+## License
+
+Like the original jekyll-theme this ported theme is released under the MIT License. Read more at the [License](//github.com/lgaida/mediumish-gohugo-theme/blob/master/LICENSE) itself.
