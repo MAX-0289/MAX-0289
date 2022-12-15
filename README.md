@@ -1,5 +1,1 @@
-# Demo
-
-This is the demonstration site of the [Mediumish GoHugo Theme](https://github.com/lgaida/mediumish-gohugo-theme)
-Run `hugo server -w -v`
-
+![Screenshot](/Screenshot 2022-11-15 at 17.20.13.png)
